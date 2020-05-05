@@ -17,5 +17,8 @@ export class NavbarComponent implements OnInit {
   login(){
     this.auth.login();
   }
+  salir(){
+    this.auth.logout();
+  }
 
 }
