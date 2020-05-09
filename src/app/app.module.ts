@@ -11,6 +11,7 @@ import { ProtegidaComponent } from './components/protegida/protegida.component';
 // Servicios
 
 import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { AuthService } from './services/auth.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ AuthService ],
+  providers: [ AuthService, AuthGuardService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

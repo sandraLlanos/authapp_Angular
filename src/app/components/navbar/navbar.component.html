@@ -5,22 +5,22 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLinkActive='active' [routerLink]="['home']">Home</a>
+      <li class="nav-item" routerLinkActive='active'>
+        <a class="nav-link"  [routerLink]="['home']">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive='active' [routerLink]="['precios']">Precios</a>
+      <li class="nav-item" routerLinkActive='active'>
+        <a class="nav-link" [routerLink]="['precios']">Precios</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive='active' [routerLink]="['protegida']">Protegida</a>
+      <li class="nav-item" routerLinkActive='active' *ngIf="auth.loggedIn">
+        <a class="nav-link" [routerLink]="['protegida']">Protegida</a>
       </li>
     </ul>
     <span class="navbar-text">
       
       <!-- <button class="btn btn-primary" *ngIf="!auth.isAuthenticated" (click)="login()">Ingresar</button>
       <button class="btn btn-primary" *ngIf="auth.isAuthenticated" (click)="salir()">salir</button> -->
-      <button (click)="login()" *ngIf="!auth.loggedIn">Log In</button>
-      <button (click)="salir()" *ngIf="auth.loggedIn">Log Out</button>
+      <button class="btn btn-outline-primary btn-sm" (click)="login()" *ngIf="!auth.loggedIn">Log In</button>
+      <button class="btn btn-outline-primary btn-sm" (click)="salir()" *ngIf="auth.loggedIn">Log Out</button>
     </span>
   </div>
 </nav>
