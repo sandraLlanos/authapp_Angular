@@ -1,3 +1,20 @@
-<p>
-  protegida works!
-</p>
+<h1>Profile</h1>
+<hr>
+<div class="row" *ngIf="auth.userProfile$ | async as profile">
+  <div class="col-md-4">
+    <img [src]="profile.picture" class="img-fluid" alt="profile_image">
+  </div>
+  <div class="col-md-8">
+    <ul class="list-group">
+      <li class="list-group-item">{{ profile.name }}</li>
+      <li class="list-group-item">{{ profile.gender }}</li>
+      <li class="list-group-item">{{ profile.updated_at | date }}</li>
+    </ul>
+  </div>
+</div>
+
+<hr>
+
+<pre *ngIf="auth.userProfile$ | async as profile">
+  <code>{{ profile | json }}</code>
+</pre>

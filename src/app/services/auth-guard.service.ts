@@ -13,8 +13,7 @@ export class AuthGuardService implements CanActivate{
   canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot ){
 
     console.log({route});
-    console.log({state});
-    
+    console.log({state});  
 
     if (this.auth.loggedIn) {
       console.log('paso el guard');      
